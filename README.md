@@ -23,22 +23,23 @@ Testing the server and client
 
 ## server.py
 ```
-import socket
-HOST , PORT = '127.0.0.1',65432
-with socket.create_server((HOST,PORT)) as s:
-    conn , addr = s.accept()
+import socket 
+HOST , PORT ='127.0.0.1', 65432
+with socket.create_server((HOST, PORT)) as s:
+    conn, addr = s.accept()
     with conn:
-        print(f'connected by {addr}')
+        print(f'Connected by {addr}')
         while data := conn.recv(1024):
             conn.sendall(data)
 ```
 ## client.py
 ```
 import socket
-HOST, PORT = '127.0.0.1', 65432
+HOST, PORT  ='127.0.0.1' , 65432
 with socket.create_connection((HOST, PORT)) as s:
-    s.sendall(b'Thenukishore, 2122223100059')
-    print(f'Received: {s.recv(1024)!r}')
+    s.sendall(b'Hanshika Varthini R : 212223240046')
+    print(f'Recieved: {s.recv(1024)!r}')
+
 ```
 ## OUTPUT:
 ![Screenshot 2025-03-03 141404](https://github.com/user-attachments/assets/448dfd8a-54b6-4024-a2a2-3ef94eae4808)
